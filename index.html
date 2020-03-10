@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- BS CSS  -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- BS JS -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Chart JS CDN -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js
+"></script>
+
+
+    <title>Chart Js Example</title>
+</head>
+<body>
+
+    <div class="container">
+        <canvas id="myChart"></canvas>
+
+        <!-- <canvas id="myChart" width="200" height="100" style="border:1px solid #000000;"></canvas> -->
+    </div>
+
+    <script>
+        let myChart=document.getElementById('myChart');
+    
+/* SECTION 4: ADD GLOBAL OPTIONS */
+            // Change global font, size, color
+            Chart.defaults.global.defaultFontFamily='Arial'; 
+            Chart.defaults.global.defaultFontSize=18; 
+            Chart.defaults.global.defaultFontColor='red';    
+
+    /* SECTION 1: CREATE A STRUCTURE */
+        
+        let revChart = new Chart(myChart,{
+            /* Need 3 main parts */
+
+            /* 1st main part */
+            type:'line', // bar, horizontalBar, Pie, line, doughnut, radar, PolarArea
+
+
+            /* 2nd main part */
+            data:{
+                    /* Label array */
+                    labels:['January','February','March','April','May','June'],
+
+                    datasets:[{
+                         /* Label array */
+                    label:'Revenue',
+                    data:[
+                        617594,
+                        481045,
+                        353060,
+                        506519,
+                        205162,
+                        95072
+                    ],   
+
+
+    /* SECTION 3: COLOR & WIDTH */
+
+                    backgroundColor:[
+                        'rgba(255,99,132,0.6)',
+                        'rgba(54,162,235,0.6)',
+                        'rgba(255,206,86,0.6)',
+                        'rgba(75,192,192,0.6)',
+                        'rgba(153,102,255,0.6)',
+                        'rgba(255,159,64,0.6)'
+                    ],
+                    /* Let's give 1px border */
+                    borderWidth:1,
+                    /* border color is grey */
+                    borderColor:'#777',
+
+                    /* hover border width will be 3px */
+                    hoverBorderWidth:3,
+                    /* Hover border wth black color */
+                    hoverBorderColor:'black'
+                    }]
+            },
+
+
+
+            /* 3rd main part */
+            options:{
+                title:{
+                display:true,
+                text:'Monthly Revenue of APPLE',
+                fontSize:25
+            },
+
+            /* LEGEND: description of colors */
+            legend:{
+                display:true,
+                position:'right',
+                labels:{
+                    fontColor:'#000' //black
+                }
+            },
+
+            layout:{
+                padding:{
+                    left:50,
+                    right:0,
+                    bottom:0,
+                    top:0
+                }
+            },
+            tooltips:{
+                enabled:true
+            }
+
+        }    
+     });
+
+
+
+    </script>
+    
+</body>
+</html>

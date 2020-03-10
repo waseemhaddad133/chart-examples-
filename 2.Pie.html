@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Add ChartJS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  
+  <!-- Add BS CDN for CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <title>Line Chart</title>
+
+</head>
+<body>
+  <div class="container">
+    
+    <!-- We use canvas element to draw graphics on web page. HTML 5 element -->
+    <canvas id="pie-chart" width="800" height="450"></canvas>
+    
+  </div>
+
+  <script>
+  
+    new Chart(document.getElementById("pie-chart"),{
+        type:'pie',
+        data:{
+            labels:["Africa","Asia","Europe","latin-America","North-America"],
+            datasets:[{
+                data:[2478,5267,734,784,433],
+                label:"Population (millions)",
+                backgroundColor:["#3e95cd","#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+               
+            }]
+    },
+    options:{
+        title:{
+            display:true,
+            text:'World population in 2050'
+        }
+    }
+});
+
+  </script>
+  </body>
+  </html>
+  
